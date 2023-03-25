@@ -52,6 +52,9 @@ const GET_ACTIVITIES = (type: string): DocumentNode => {
               coverImage {
                 large
               }
+              nextAiringEpisode {
+                airingAt
+              }
             }
           }
         }

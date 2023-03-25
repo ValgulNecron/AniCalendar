@@ -17,7 +17,12 @@ const parseActivities = (activities: any): Activity[] => {
       ac.media.format === "TV" ||
       ac.media.format === "MOVIE" ||
       ac.media.format === "ONA" ||
-      ac.media.format === "MANGA"
+      ac.media.format === "MANGA" ||
+      ac.media.format === "NOVEL" ||
+      ac.media.format === "ONE_SHOT" ||
+      ac.media.format === "OVA" ||
+      ac.media.format === "SPECIAL" ||
+      ac.media.format === "TV_SHORT"
   );
 
   let activityList: Activity[] = [];
