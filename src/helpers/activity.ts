@@ -9,7 +9,9 @@ const parseActivities = (activities: any): Activity[] => {
     (ac: { status: string }): any =>
       ac.status === "watched episode" ||
       (settings.filters["show_completed"] && ac.status === "completed") ||
-      ac.status === "read chapter"
+      ac.status === "read chapter" ||
+        (settings.filters["show_completed"] && ac.status === "reread chapter") ||
+        (settings.filters["show_completed"] && ac.status === "rewatched episode")
   );
 
   const filterFormatActivities = watchedActivities.filter(
