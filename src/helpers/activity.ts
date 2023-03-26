@@ -11,7 +11,7 @@ const parseActivities = (activities: any): Activity[] => {
       (settings.filters["show_completed"] && ac.status === "completed") ||
       ac.status === "read chapter" ||
         ac.status === "reread" ||
-        "rewatched"
+        ac.status === "rewatched"
   );
 
   const filterFormatActivities = watchedActivities.filter(
