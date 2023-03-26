@@ -14,10 +14,12 @@ const createEvents = (data: any[], date: any) => {
                 activity={an}
                 total={results.length}
                 key={an.anime_id + date + an.status}
+                nextEpisode={an.nextEpisode}
             />
         ));
     }
 };
+
 
 const createDaysCells = (data: any[], days: CalendarDay[]): JSX.Element[] => {
     return days.map((day) => (
