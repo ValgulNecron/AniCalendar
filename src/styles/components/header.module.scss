@@ -69,6 +69,7 @@
     -moz-box-shadow: 3px 4px 20px 0px var(--foreground-text-highlight);
     box-shadow: 3px 4px 20px 0px var(--foreground-text-highlight);
   }
+
   @include responsive(smartphone-portrait) {
     width: 120px;
     padding: 10px;
@@ -91,6 +92,7 @@
   display: flex;
   align-items: center;
   transition: all ease 0.2s;
+
   &:hover {
     color: white;
   }

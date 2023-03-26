@@ -7,4 +7,4 @@ import Footer from "./footer";
 import SettingModal from "./modals/settingModal";
 import LegendModal from "./modals/legendModal";
 
-export { Calendar, Group, Header, Footer, SettingModal, Event, LegendModal };
+export {Calendar, Group, Header, Footer, SettingModal, Event, LegendModal};

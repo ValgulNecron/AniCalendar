@@ -1,19 +1,19 @@
-import { DocumentNode, gql } from "@apollo/client";
+import {DocumentNode, gql} from "@apollo/client";
 
 const getCorrectType = (type: string) => {
-  switch (type) {
-    case "anime":
-      return "ANIME_LIST";
-    case "manga":
-      return "MANGA_LIST";
-    case "animemanga":
-      return "MEDIA_LIST";
-  }
+    switch (type) {
+        case "anime":
+            return "ANIME_LIST";
+        case "manga":
+            return "MANGA_LIST";
+        case "animemanga":
+            return "MEDIA_LIST";
+    }
 };
 
 const GET_ACTIVITIES = (type: string): DocumentNode => {
-  const correctType = getCorrectType(type);
-  return gql`
+    const correctType = getCorrectType(type);
+    return gql`
     query ($page: Int, $dateLess: Int, $dateGreater: Int, $userId: Int) {
       Page(page: $page, perPage: 50) {
         pageInfo {
