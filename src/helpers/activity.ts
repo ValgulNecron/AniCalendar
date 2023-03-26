@@ -56,7 +56,6 @@ const groupActivitiesByDate = (activities: Activity[]): any => {
     return group;
   }, {});
 
-  //console.log(dateGroup);
   return dateGroup;
 };
 
