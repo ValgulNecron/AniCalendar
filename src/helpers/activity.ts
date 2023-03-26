@@ -62,21 +62,21 @@ const groupActivitiesByDate = (activities: Activity[]): Record<string, Activity[
 
         if (activity.nextEpisode) {
             const nextAiringDate = dayjs(date)
-                .add(activity.nextEpisode, "day")
+                .add(Number(activity.nextEpisode), "day")
                 .format("YYYY-MM-DD");
 
             if (!data[nextAiringDate]) {
                 data[nextAiringDate] = [];
             }
 
-            // Clone the activity object and update the 'nextEpisode' field to 1
-            const nextActivity = {...activity, nextEpisode: 1};
+            // Clone the activity object and update the 'nextEpisode' field
+            const nextActivity = {...activity, nextEpisode: activity.nextEpisode};
+            nextActivity.anime_title += " (Upcoming)";
             data[nextAiringDate].push(nextActivity);
         }
     });
 
     return data;
 };
-
 
 export {parseActivities, groupActivitiesByDate};

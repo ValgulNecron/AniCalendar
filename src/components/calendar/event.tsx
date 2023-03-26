@@ -18,6 +18,9 @@ const Event: React.FC<ICalendarEventProps> = ({activity, total}) => {
     };
 
     const checkSettings = (): string => {
+        if (activity.anime_title.includes("(Upcoming)")) {
+            return settings.colors["upcoming_episode"];
+        }
         if (activity.progress) {
             if (
                 activity.progress.toString().startsWith("1 -") ||
