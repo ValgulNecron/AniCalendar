@@ -49,15 +49,34 @@ const parseActivities = (activities: any): Activity[] => {
     return activityList;
 };
 
-const groupActivitiesByDate = (activities: Activity[]): any => {
-    const dateGroup: any = activities.reduce((group: any, product) => {
-        const {date} = product;
-        group[date] = group[date] ?? [];
-        group[date].push(product);
-        return group;
-    }, {});
+const groupActivitiesByDate = (activities: Activity[]): Record<string, Activity[]> => {
+    const data: Record<string, Activity[]> = {};
 
-    return dateGroup;
+    activities.forEach((activity) => {
+        const {date} = activity;
+
+        if (!data[date]) {
+            data[date] = [];
+        }
+        data[date].push(activity);
+
+        if (activity.nextEpisode) {
+            const nextAiringDate = dayjs(date)
+                .add(activity.nextEpisode, "day")
+                .format("YYYY-MM-DD");
+
+            if (!data[nextAiringDate]) {
+                data[nextAiringDate] = [];
+            }
+
+            // Clone the activity object and update the 'nextEpisode' field to 1
+            const nextActivity = {...activity, nextEpisode: 1};
+            data[nextAiringDate].push(nextActivity);
+        }
+    });
+
+    return data;
 };
+
 
 export {parseActivities, groupActivitiesByDate};
