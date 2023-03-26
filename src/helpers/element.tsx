@@ -6,13 +6,9 @@ const createWeekDaysList = (weekdays: string[]): JSX.Element[] => {
     return weekdays.map((day) => <li key={day}>{day}</li>);
 };
 
-const createEvents = (data: Record<string, Activity[]>, date: string) => {
-    const results: Activity[] = data[date];
+const createEvents = (data: any[], date: any) => {
+    const results: any[] = data[date];
     if (results) {
-        results.forEach((an: Activity) => {
-            addNextAiringEpisode(data, an);
-        });
-
         return results.map((an: Activity) => (
             <Event
                 activity={an}
@@ -25,8 +21,7 @@ const createEvents = (data: Record<string, Activity[]>, date: string) => {
 };
 
 
-
-const createDaysCells = (data: Record<string, Activity[]>, days: CalendarDay[]): JSX.Element[] => {
+const createDaysCells = (data: any[], days: CalendarDay[]): JSX.Element[] => {
     return days.map((day) => (
         <li
             key={day.date + day.dayOfMonth}
@@ -42,8 +37,7 @@ const createDaysCells = (data: Record<string, Activity[]>, days: CalendarDay[]):
     ));
 };
 
-
-const createDaysRow = (data: Record<string, Activity[]>, days: CalendarDay[]): JSX.Element[] => {
+const createDaysRow = (data: any[], days: CalendarDay[]): JSX.Element[] => {
     return days.map((day) => (
         <div className={styles.list} key={day.date + day.dayOfMonth}>
             <div className={styles.day}>
@@ -53,24 +47,5 @@ const createDaysRow = (data: Record<string, Activity[]>, days: CalendarDay[]): J
         </div>
     ));
 };
-
-
-const addNextAiringEpisode = (data: Record<string, Activity[]>, activity: Activity) => {
-    if (activity.nextEpisode) {
-        const nextAiringDate = dayjs(activity.date)
-            .add(activity.nextEpisode - 1, "week")
-            .format("YYYY-MM-DD");
-
-        if (!data[nextAiringDate]) {
-            data[nextAiringDate] = [];
-        }
-
-        data[nextAiringDate].push({
-            ...activity,
-            date: nextAiringDate,
-            progress: `Episode ${activity.nextEpisode}`,
-        });
-    }
-}
 
 export {createWeekDaysList, createDaysCells, createDaysRow};
