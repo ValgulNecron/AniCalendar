@@ -44,14 +44,26 @@ const Event: React.FC<ICalendarEventProps> = ({activity, total}) => {
 
     const getFormat = (): string => {
         switch (activity.format) {
+            case "TV":
+                return "(Anime)";
+            case "TV_SHORT":
+                return "(Anime Short)";
+            case "SPECIAL":
+                return "(Special)";
             case "MOVIE":
                 return "(Movie)";
+            case "OVA":
+                return "(OVA)";
             case "ONA":
                 return "(ONA)";
+            case "MUSIC":
+                return "(Music)";
             case "MANGA":
-                return "(MANGA)";
-            case "TV":
-                return "(ANIME)";
+                return "(Manga)";
+            case "NOVEL":
+                return "(Novel)";
+            case "ONE_SHOT":
+                return "(One Shot)";
             default:
                 return "UNKNOWN";
         }

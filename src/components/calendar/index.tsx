@@ -4,13 +4,13 @@ import dayjs from "dayjs";
 import * as React from "react";
 import {GET_ACTIVITIES} from "@/queries";
 import {
-  createDaysForCurrentMonth,
-  createDaysForNextMonth,
-  createDaysForPreviousMonth,
-  getNumberOfDaysInMonth,
-  groupActivitiesByDate,
-  parseActivities,
-  WEEK_NAMES,
+    createDaysForCurrentMonth,
+    createDaysForNextMonth,
+    createDaysForPreviousMonth,
+    getNumberOfDaysInMonth,
+    groupActivitiesByDate,
+    parseActivities,
+    WEEK_NAMES,
 } from "@/helpers";
 
 import {client} from "@/apolloClient";
