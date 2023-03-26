@@ -1,6 +1,6 @@
 type Activity = {
     date: string;
-    nextEpisode: number;
+    nextEpisode: string;
     url: string;
     anime_title: string;
     anime_id: number;

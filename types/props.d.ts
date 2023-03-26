@@ -18,7 +18,6 @@ interface ICalendarButtonsProps {
 interface ICalendarEventProps {
     activity: Activity;
     total: number;
-    nextEpisode: number;
 }
 
 interface ISettingModalProps {
