@@ -1,5 +1,7 @@
 # AniCalendar
 
+just added a docker to run it from anywhere arm and amd64 compatible https://hub.docker.com/repository/docker/valgul/ani-calendar/general
+
 **NOTE:** This is only for users that are using AniList to track their anime and manga progress!
 
 Look at your anime and manga history through a calendar. Many users from AniList were asking for a calendar to view
