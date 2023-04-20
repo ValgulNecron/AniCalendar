@@ -3,6 +3,15 @@
 just added a docker to run it from anywhere arm and amd64
 compatible https://hub.docker.com/repository/docker/valgul/ani-calendar/general
 
+also added name for "all" type so no more "unknow" and also added the fact that it show "all" type music, ova, one shot, etc....
+
+tried adding next ep with nextAiringEpisode {
+                airingAt
+              } but can't make it work 
+
+also added support for reread and rewatch and should work
+
+
 **NOTE:** This is only for users that are using AniList to track their anime and manga progress!
 
 Look at your anime and manga history through a calendar. Many users from AniList were asking for a calendar to view
