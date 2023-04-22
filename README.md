@@ -21,7 +21,7 @@ services:
     image: valgul/ani-calendar
     restart: unless-stopped # you can change this as you like
     environment:
-      - CLIENT_ID=${CLIENT_ID}
+      - CLIENT_ID=${CLIENT_ID} 
       - CLIENT_SECRET=${CLIENT_SECRET}
       - GRAPHQL_ENDPOINT=${GRAPHQL_ENDPOINT}
       - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
@@ -75,6 +75,7 @@ CLIENT_ID=[CLIENT_ID_ANILIST]
 CLIENT_SECRET=[CLIENT_SECRET_ANILIST]
 GRAPHQL_ENDPOINT=https://graphql.anilist.co
 NEXTAUTH_SECRET=[RANDOM_STRING]
+NEXTAUTH_URL=[SITE_URL_EXCEPT_IF_ON_VERCEL]
 ```
 
 ### NEXTAUTH_SECRET
