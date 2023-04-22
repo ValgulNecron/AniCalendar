@@ -11,6 +11,24 @@ tried adding next ep with nextAiringEpisode {
 
 also added support for reread and rewatch and should work
 
+to launch with docker
+compose.yml
+```docker
+version: "3.9"
+services:
+  ani-calendar:
+    container_name: ani-calendar
+    image: valgul/ani-calendar
+    restart: unless-stopped # you can change this as you like
+    environment:
+      - CLIENT_ID=${CLIENT_ID}
+      - CLIENT_SECRET=${CLIENT_SECRET}
+      - GRAPHQL_ENDPOINT=${GRAPHQL_ENDPOINT}
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
+```
+
+
 
 **NOTE:** This is only for users that are using AniList to track their anime and manga progress!
 
