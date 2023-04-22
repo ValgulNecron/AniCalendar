@@ -27,8 +27,19 @@ services:
       - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
       - NEXTAUTH_URL=${NEXTAUTH_URL}
 ```
+since no port are bind on this config it's recomanded to add a static ip to the container for your reverse proxy or local use. 
 
+```yml
+    networks:
+      bridge:
+        ipv4_address: 172.16.2.2
+```
 
+or you can bind port
+```yml
+    ports:
+      - "3000:3000"
+```
 
 **NOTE:** This is only for users that are using AniList to track their anime and manga progress!
 
