@@ -13,7 +13,7 @@ also added support for reread and rewatch and should work
 
 to launch with docker
 compose.yml
-```docker
+```yml
 version: "3.9"
 services:
   ani-calendar:
